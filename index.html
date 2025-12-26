@@ -10,11 +10,11 @@
   <main class="wrap">
     <div class="center">
 
-      <!-- MEDIA DI ATAS CARD (GAMBAR) -->
-      <video class="top-media" id="topMedia" autoplay muted loop playsinline>
-  <source src="doksli/p1.mp4" type="video/mp4">
-</video>
-
+      <!-- VIDEO DI ATAS CARD (SUARA DARI VIDEO) -->
+      <!-- NOTE: jangan autoplay & jangan muted, nanti kita play via JS saat klik "Masuk" -->
+      <video class="top-media" id="bgVideo" loop playsinline preload="auto">
+        <source src="doksli/p1.mp4" type="video/mp4">
+      </video>
 
       <!-- CARD -->
       <div class="card" id="card">
@@ -38,7 +38,6 @@
           <h2 class="q" id="question"></h2>
 
           <div class="choices" id="choices"></div>
-
           <p class="reply" id="reply"></p>
         </section>
 
@@ -70,5 +69,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
