@@ -8,46 +8,62 @@
 </head>
 <body>
   <main class="wrap">
-    <div class="card" id="card">
-      <!-- STEP 0: input nama -->
-      <section id="step0" class="step">
-        <p class="tiny">Aku bikin ini khusus buat kamu.</p>
-        <h1 class="title">Masukin nama kamu dulu 🤍</h1>
+    <div class="center">
 
-        <div class="field">
-          <input id="nameInput" type="text" placeholder="Tulis nama kamu di sini..." maxlength="24" />
-          <button class="btn" id="enterBtn">Masuk</button>
-        </div>
+      <!-- MEDIA DI ATAS CARD (GAMBAR) -->
+      <img
+        src="img/love.png"
+        alt="love"
+        class="top-media"
+        id="topMedia"
+      />
 
-        <p class="error" id="err"></p>
-      </section>
+      <!-- CARD -->
+      <div class="card" id="card">
 
-      <!-- STEP Q: pertanyaan berlapis -->
-      <section id="stepQ" class="step hidden">
-        <p class="tiny" id="greet"></p>
-        <h2 class="q" id="question"></h2>
+        <!-- STEP 0: input nama -->
+        <section id="step0" class="step">
+          <p class="tiny">Aku bikin ini khusus buat kamu.</p>
+          <h1 class="title">Masukin nama kamu dulu 🤍</h1>
 
-        <div class="choices" id="choices"></div>
+          <div class="field">
+            <input id="nameInput" type="text" placeholder="Tulis nama kamu di sini..." maxlength="24" />
+            <button class="btn" id="enterBtn">Masuk</button>
+          </div>
 
-        <p class="reply" id="reply"></p>
-      </section>
+          <p class="error" id="err"></p>
+        </section>
 
-      <!-- STEP END: ending -->
-      <section id="stepEnd" class="step hidden">
-        <p class="tiny" id="endGreet"></p>
-        <h2 class="q">Baca pelan-pelan ya…</h2>
+        <!-- STEP Q: pertanyaan berlapis -->
+        <section id="stepQ" class="step hidden">
+          <p class="tiny" id="greet"></p>
+          <h2 class="q" id="question"></h2>
 
-        <pre class="letter" id="letter"></pre>
+          <div class="choices" id="choices"></div>
 
-        <div class="endRow">
-          <button class="btn" id="hugBtn">Klik untuk peluk virtual</button>
-          <button class="btn ghost" id="restartBtn">Ulang dari awal</button>
-        </div>
+          <p class="reply" id="reply"></p>
+        </section>
 
-        <div class="heart hidden" id="heart">💗</div>
-      </section>
+        <!-- STEP END: ending -->
+        <section id="stepEnd" class="step hidden">
+          <p class="tiny" id="endGreet"></p>
+          <h2 class="q">Baca pelan-pelan ya…</h2>
+
+          <pre class="letter" id="letter"></pre>
+
+          <div class="endRow">
+            <button class="btn" id="hugBtn">Klik untuk peluk virtual</button>
+            <button class="btn ghost" id="restartBtn">Ulang dari awal</button>
+          </div>
+
+          <div class="heart hidden" id="heart">💗</div>
+        </section>
+
+      </div>
+
     </div>
 
+    <!-- Background hearts -->
     <div class="bgHearts" aria-hidden="true">
       <span>♡</span><span>♡</span><span>♡</span><span>♡</span><span>♡</span>
     </div>
@@ -56,3 +72,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
