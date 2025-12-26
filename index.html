@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Untuk Kamu 🤍</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <div class="card" id="card">
+      <!-- STEP 0: input nama -->
+      <section id="step0" class="step">
+        <p class="tiny">Aku bikin ini khusus buat kamu.</p>
+        <h1 class="title">Masukin nama kamu dulu 🤍</h1>
+
+        <div class="field">
+          <input id="nameInput" type="text" placeholder="Tulis nama kamu di sini..." maxlength="24" />
+          <button class="btn" id="enterBtn">Masuk</button>
+        </div>
+
+        <p class="error" id="err"></p>
+      </section>
+
+      <!-- STEP Q: pertanyaan berlapis -->
+      <section id="stepQ" class="step hidden">
+        <p class="tiny" id="greet"></p>
+        <h2 class="q" id="question"></h2>
+
+        <div class="choices" id="choices"></div>
+
+        <p class="reply" id="reply"></p>
+      </section>
+
+      <!-- STEP END: ending -->
+      <section id="stepEnd" class="step hidden">
+        <p class="tiny" id="endGreet"></p>
+        <h2 class="q">Baca pelan-pelan ya…</h2>
+
+        <pre class="letter" id="letter"></pre>
+
+        <div class="endRow">
+          <button class="btn" id="hugBtn">Klik untuk peluk virtual</button>
+          <button class="btn ghost" id="restartBtn">Ulang dari awal</button>
+        </div>
+
+        <div class="heart hidden" id="heart">💗</div>
+      </section>
+    </div>
+
+    <div class="bgHearts" aria-hidden="true">
+      <span>♡</span><span>♡</span><span>♡</span><span>♡</span><span>♡</span>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
