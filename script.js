@@ -18,6 +18,9 @@ const hugBtn = document.getElementById("hugBtn");
 const restartBtn = document.getElementById("restartBtn");
 const heart = document.getElementById("heart");
 
+// Video yang jadi sumber audio
+const bgVideo = document.getElementById("bgVideo");
+
 let personName = "";
 let qIndex = 0;
 
@@ -99,7 +102,6 @@ function pickAnswer(ans) {
   const item = flow[qIndex];
   replyEl.textContent = item.reply(ans);
 
-  // Lanjut otomatis setelah jeda
   setTimeout(() => {
     qIndex++;
     if (qIndex >= flow.length) {
@@ -117,6 +119,20 @@ function goToEnd() {
   heart.classList.add("hidden");
 }
 
+// ====== Play Video + Audio (dipicu klik user) ======
+function startVideoWithAudio() {
+  if (!bgVideo) return;
+
+  // pastikan tidak muted
+  bgVideo.muted = false;
+  bgVideo.volume = 0.4; // lembut
+
+  // play setelah interaksi user
+  bgVideo.play().catch(() => {
+    // kalau masih diblok, biarin (gak bikin error)
+  });
+}
+
 // ====== Event ======
 enterBtn.addEventListener("click", () => {
   const v = (nameInput.value || "").trim();
@@ -125,8 +141,13 @@ enterBtn.addEventListener("click", () => {
     nameInput.focus();
     return;
   }
+
   err.textContent = "";
   personName = v;
+
+  // ▶️ mulai video + suaranya
+  startVideoWithAudio();
+
   goToQuestions();
 });
 
@@ -136,8 +157,8 @@ nameInput.addEventListener("keydown", (e) => {
 
 hugBtn.addEventListener("click", () => {
   heart.classList.remove("hidden");
-  // retrigger animasi
   heart.style.animation = "none";
+  // retrigger animasi
   // eslint-disable-next-line no-unused-expressions
   heart.offsetHeight;
   heart.style.animation = "";
